@@ -40,6 +40,31 @@ for kind, req in (("forks", ("id", "name", "repo", "description")),
                 errors.append(f"{where}: 'sha256' (64 hex characters) is required so Studio can verify the file")
             if e.get("file") and not (root / e["file"]).is_file():
                 warnings.append(f"{where}: {e['file']} is not in this repository (fine if authors did not allow redistribution)")
+SAFE = re.compile(r"KYTY_[A-Z0-9_]{1,60}")
+
+
+def check_setting(where, d):
+    if d.get("kind") not in ("choice", "num", "switch", "text") or not d.get("id") or not d.get("label"):
+        errors.append(f"{where}: needs id, label and kind (choice, num, switch or text)")
+        return
+    if d["kind"] == "choice":
+        envs = [c.get("env") for c in d.get("choices", [])]
+        if not envs:
+            errors.append(f"{where}: a choice setting needs choices")
+    elif d["kind"] == "switch":
+        envs = [d.get("on")] + ([d["off"]] if "off" in d else [])
+    else:
+        envs = [{d.get("key", ""): 1}]
+    for e in envs:
+        if not (isinstance(e, dict) and e and all(SAFE.fullmatch(str(k)) for k in e)):
+            errors.append(f"{where}: only KYTY_* variables may be set")
+
+
+for i, d in enumerate(cat.get("settings", [])):
+    check_setting(f"settings[{i}] {d.get('id', '?')}", d)
+for e in cat.get("forks", []):
+    for i, d in enumerate(e.get("settings", [])):
+        check_setting(f"forks {e.get('id')} settings[{i}] {d.get('id', '?')}", d)
 for w in warnings:
     print("warning:", w)
 for e in errors:

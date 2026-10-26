@@ -231,5 +231,158 @@
       "options": 1,
       "description": "Render scale 0.5, so the game renders at 1080p instead of 4K. A single option, on by default. Source: patch-list thread."
     }
+  ],
+  "settings": [
+    {
+      "id": "framegen",
+      "label": "Frame generation",
+      "kind": "choice",
+      "desc": "Extra generated frames. DLSS-G needs an RTX 40/50 card and the Streamline files (see the fork's README); the AMD FSR option works on any GPU.",
+      "choices": [
+        {
+          "label": "Off",
+          "env": {
+            "KYTY_FRAMEGEN": "0"
+          }
+        },
+        {
+          "label": "2x (DLSS-G)",
+          "env": {
+            "KYTY_FRAMEGEN": "1"
+          }
+        },
+        {
+          "label": "3x (DLSS-G, RTX 50)",
+          "env": {
+            "KYTY_FRAMEGEN": "2"
+          }
+        },
+        {
+          "label": "4x (DLSS-G, RTX 50)",
+          "env": {
+            "KYTY_FRAMEGEN": "3"
+          }
+        },
+        {
+          "label": "2x (AMD FSR 3.1)",
+          "env": {
+            "KYTY_FRAMEGEN": "1",
+            "KYTY_FRAMEGEN_BACKEND": "fsr"
+          }
+        }
+      ]
+    },
+    {
+      "id": "upscaler",
+      "label": "Upscaling",
+      "kind": "choice",
+      "desc": "Replaces the game's own anti-aliasing with DLSS (RTX) or FSR 3.1 (any GPU).",
+      "choices": [
+        {
+          "label": "Game's own (TAA)",
+          "env": {
+            "KYTY_DLSS": "0",
+            "KYTY_FSR": "0"
+          }
+        },
+        {
+          "label": "NVIDIA DLSS",
+          "env": {
+            "KYTY_DLSS": "1",
+            "KYTY_FSR": "0"
+          }
+        },
+        {
+          "label": "AMD FSR 3.1",
+          "env": {
+            "KYTY_DLSS": "0",
+            "KYTY_FSR": "1"
+          }
+        }
+      ]
+    },
+    {
+      "id": "renderres",
+      "label": "Render resolution",
+      "kind": "choice",
+      "desc": "The game's 3D resolution (lower is faster).",
+      "choices": [
+        {
+          "label": "540p",
+          "env": {
+            "KYTY_ASTRO_RENDER_RES": "540"
+          }
+        },
+        {
+          "label": "720p",
+          "env": {
+            "KYTY_ASTRO_RENDER_RES": "720"
+          }
+        },
+        {
+          "label": "1080p",
+          "env": {
+            "KYTY_ASTRO_RENDER_RES": "1080"
+          }
+        },
+        {
+          "label": "1368p",
+          "env": {
+            "KYTY_ASTRO_RENDER_RES": "1368"
+          }
+        },
+        {
+          "label": "1872p",
+          "env": {
+            "KYTY_ASTRO_RENDER_RES": "1872"
+          }
+        },
+        {
+          "label": "2160p",
+          "env": {
+            "KYTY_ASTRO_RENDER_RES": "2160"
+          }
+        }
+      ]
+    },
+    {
+      "id": "fpscap",
+      "label": "Frame rate limit",
+      "kind": "num",
+      "key": "KYTY_FRAMEGEN_FPS_CAP",
+      "min": 0,
+      "max": 1000,
+      "desc": "With DLSS-G, holds the rendered frames to this rate so generated frames are evenly spaced. Pick one your PC holds. 0 = off."
+    },
+    {
+      "id": "pacing",
+      "label": "Smooth frame pacing",
+      "kind": "switch",
+      "on": {
+        "KYTY_PRESENT_ABS_VBLANK": "1"
+      },
+      "off": {
+        "KYTY_PRESENT_ABS_VBLANK": "0"
+      },
+      "desc": "After a slow frame, skip a vblank instead of showing the next frames back to back."
+    },
+    {
+      "id": "relaxed",
+      "label": "Relaxed shader maths",
+      "kind": "switch",
+      "on": {
+        "KYTY_FLOAT_PROFILE": "relaxed"
+      },
+      "desc": "Simpler shader maths: faster, experimental."
+    },
+    {
+      "id": "vram",
+      "label": "Video memory budget (MB)",
+      "kind": "num",
+      "key": "KYTY_VRAM_BUDGET_MB",
+      "min": 0,
+      "max": 1000000,
+      "desc": "Leaves video memory free for DLSS-G (helps on 16 GB cards at 4K)."
+    }
   ]
 }

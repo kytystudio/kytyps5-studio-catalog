@@ -2,26 +2,146 @@
   "$schema": "http://json-schema.org/draft-07/schema#",
   "title": "KytyPS5 Studio community catalog",
   "type": "object",
-  "required": ["forks", "patches"],
+  "required": [
+    "forks",
+    "patches"
+  ],
   "properties": {
-    "schema": { "const": 1 },
-    "updated": { "type": "string", "pattern": "^\d{4}-\d{2}-\d{2}$" },
-    "about": { "type": "string" },
+    "schema": {
+      "const": 1
+    },
+    "updated": {
+      "type": "string",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+    },
+    "about": {
+      "type": "string"
+    },
     "forks": {
       "type": "array",
       "items": {
         "type": "object",
-        "required": ["id", "name", "repo", "description"],
+        "required": [
+          "id",
+          "name",
+          "repo",
+          "description"
+        ],
         "properties": {
-          "id": { "type": "string", "pattern": "^[\w.-]{1,40}$" },
-          "name": { "type": "string", "maxLength": 120 },
-          "repo": { "type": "string", "pattern": "^[\w.-]+/[\w.-]+$" },
-          "author": { "type": "string" },
-          "description": { "type": "string", "maxLength": 1200 },
-          "games": { "type": "array", "items": { "type": "string" } },
-          "tags": { "type": "array", "items": { "type": "string" } },
-          "notes": { "type": "string", "maxLength": 600 },
-          "license": { "type": "string" }
+          "id": {
+            "type": "string",
+            "pattern": "^[\\w.-]{1,40}$"
+          },
+          "name": {
+            "type": "string",
+            "maxLength": 120
+          },
+          "repo": {
+            "type": "string",
+            "pattern": "^[\\w.-]+/[\\w.-]+$"
+          },
+          "author": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string",
+            "maxLength": 1200
+          },
+          "games": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "tags": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "notes": {
+            "type": "string",
+            "maxLength": 600
+          },
+          "license": {
+            "type": "string"
+          },
+          "settings": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "id",
+                "label",
+                "kind"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "pattern": "^[\\w:.-]{1,60}$"
+                },
+                "label": {
+                  "type": "string",
+                  "maxLength": 60
+                },
+                "desc": {
+                  "type": "string",
+                  "maxLength": 400
+                },
+                "kind": {
+                  "enum": [
+                    "choice",
+                    "num",
+                    "switch",
+                    "text"
+                  ]
+                },
+                "needs": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "pattern": "^KYTY_[A-Z0-9_]+$"
+                  },
+                  "description": "Shared entries only appear for builds whose preset or README names these variables (default: every variable the entry sets). Entries inside a fork are always shown for that fork."
+                },
+                "choices": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "required": [
+                      "label",
+                      "env"
+                    ],
+                    "properties": {
+                      "label": {
+                        "type": "string"
+                      },
+                      "env": {
+                        "type": "object",
+                        "description": "KYTY_* variables only"
+                      }
+                    }
+                  }
+                },
+                "key": {
+                  "type": "string",
+                  "pattern": "^KYTY_[A-Z0-9_]+$"
+                },
+                "min": {
+                  "type": "integer"
+                },
+                "max": {
+                  "type": "integer"
+                },
+                "on": {
+                  "type": "object"
+                },
+                "off": {
+                  "type": "object"
+                }
+              }
+            }
+          }
         }
       }
     },
@@ -29,20 +149,136 @@
       "type": "array",
       "items": {
         "type": "object",
-        "required": ["id", "titleId", "game", "name", "version", "description"],
+        "required": [
+          "id",
+          "titleId",
+          "game",
+          "name",
+          "version",
+          "description"
+        ],
         "properties": {
-          "id": { "type": "string", "pattern": "^[\w.-]{1,40}$" },
-          "titleId": { "type": "string", "pattern": "^[A-Z]{4}\d{5}$" },
-          "game": { "type": "string" },
-          "gameVersion": { "type": "string" },
-          "name": { "type": "string", "maxLength": 120 },
-          "author": { "type": "string" },
-          "version": { "type": "string" },
-          "options": { "type": "integer", "minimum": 0 },
-          "file": { "type": "string", "description": "relative path next to catalog.json, e.g. patches/PPSA00000-name.json" },
-          "url": { "type": "string", "pattern": "^https://(raw\.githubusercontent\.com|gist\.githubusercontent\.com|github\.com)/" },
-          "sha256": { "type": "string", "pattern": "^[0-9a-fA-F]{64}$" },
-          "description": { "type": "string", "maxLength": 1000 }
+          "id": {
+            "type": "string",
+            "pattern": "^[\\w.-]{1,40}$"
+          },
+          "titleId": {
+            "type": "string",
+            "pattern": "^[A-Z]{4}\\d{5}$"
+          },
+          "game": {
+            "type": "string"
+          },
+          "gameVersion": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string",
+            "maxLength": 120
+          },
+          "author": {
+            "type": "string"
+          },
+          "version": {
+            "type": "string"
+          },
+          "options": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "file": {
+            "type": "string",
+            "description": "relative path next to catalog.json, e.g. patches/PPSA00000-name.json"
+          },
+          "url": {
+            "type": "string",
+            "pattern": "^https://(raw\\.githubusercontent\\.com|gist\\.githubusercontent\\.com|github\\.com)/"
+          },
+          "sha256": {
+            "type": "string",
+            "pattern": "^[0-9a-fA-F]{64}$"
+          },
+          "description": {
+            "type": "string",
+            "maxLength": 1000
+          }
+        }
+      }
+    },
+    "settings": {
+      "type": "array",
+      "description": "Fork settings switched with KYTY_* environment variables, shown in Studio under Fork settings.",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "label",
+          "kind"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[\\w:.-]{1,60}$"
+          },
+          "label": {
+            "type": "string",
+            "maxLength": 60
+          },
+          "desc": {
+            "type": "string",
+            "maxLength": 400
+          },
+          "kind": {
+            "enum": [
+              "choice",
+              "num",
+              "switch",
+              "text"
+            ]
+          },
+          "needs": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "^KYTY_[A-Z0-9_]+$"
+            },
+            "description": "Shared entries only appear for builds whose preset or README names these variables (default: every variable the entry sets). Entries inside a fork are always shown for that fork."
+          },
+          "choices": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "label",
+                "env"
+              ],
+              "properties": {
+                "label": {
+                  "type": "string"
+                },
+                "env": {
+                  "type": "object",
+                  "description": "KYTY_* variables only"
+                }
+              }
+            }
+          },
+          "key": {
+            "type": "string",
+            "pattern": "^KYTY_[A-Z0-9_]+$"
+          },
+          "min": {
+            "type": "integer"
+          },
+          "max": {
+            "type": "integer"
+          },
+          "on": {
+            "type": "object"
+          },
+          "off": {
+            "type": "object"
+          }
         }
       }
     }

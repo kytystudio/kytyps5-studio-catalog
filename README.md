@@ -37,3 +37,17 @@ Add an entry, run `python validate.py`, open a PR. Keep one fork or patch per PR
 
 ## License
 No license is set yet. Choose one for the catalog text (for example CC0-1.0 for metadata) before publishing.
+
+## Fork settings (optional)
+
+Studio shows a fork's own options under **Fork settings** (read from the build's `--help`). Many forks switch
+features such as frame generation with `KYTY_*` environment variables instead; describe those here so Studio gets a
+proper menu for them:
+
+- top-level `"settings"`: shared definitions. Studio shows one only for a build whose preset or README mentions the
+  variables it sets (`"needs"` overrides which ones), so it can be written once for every fork that has the feature.
+- `"settings"` inside a fork entry: definitions that fork always gets.
+
+Kinds: `choice` (`choices: [{"label", "env": {"KYTY_X": "1"}}]`), `num` (`key`, `min`, `max`), `switch` (`on`, optional `off`)
+and `text` (`key`). Only `KYTY_*` variables are accepted. Variables a build documents in a README table that no entry
+covers still appear in Studio as plain text fields.
