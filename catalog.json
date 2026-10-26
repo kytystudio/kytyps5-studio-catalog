@@ -1,0 +1,235 @@
+{
+  "schema": 1,
+  "updated": "2026-10-26",
+  "about": "Community catalog for KytyPS5 Studio: metadata only (names, descriptions, links). Studio ships with no catalog, no forks and no patch files. Load this file yourself (Settings > Community).",
+  "forks": [
+    {
+      "id": "chenxiao07",
+      "name": "chenxiao07 · Performance builds",
+      "repo": "chenxiao07/KytyPS5",
+      "author": "chenxiao07",
+      "description": "The most starred community fork. Windows releases (v2026MMDD) come with its own launcher scripts and a shader precompile tool (precompile.cmd) that builds a shader cache once per game version. Its README describes performance patches on top of the upstream code.",
+      "games": [],
+      "tags": [
+        "performance",
+        "shader precompile"
+      ],
+      "notes": "Shader caches can take several GB and a full precompile can take hours.",
+      "license": "GPL-2.0"
+    },
+    {
+      "id": "jetsku",
+      "name": "Jetsku · U59 shader and renderer fixes",
+      "repo": "Jetsku/KytyPS5",
+      "author": "Jetsku",
+      "description": "Experimental KytyPS5 U59 line with merged shader and renderer fixes, published as Windows and Linux releases. Ships a preset file (u59-preset.json) with performance switches such as shader precompile and pipeline prefetch; Studio applies it automatically.",
+      "games": [],
+      "tags": [
+        "shader fixes",
+        "experimental"
+      ],
+      "license": "GPL-2.0"
+    },
+    {
+      "id": "biggsy",
+      "name": "Biggsy · Astro Bot + DLSS Frame Generation",
+      "repo": "biggsymobile-png/KytyPS5",
+      "author": "Biggsy",
+      "description": "Experimental build whose repository description matches the U59 line (merged shader and renderer fixes). Releases are named astrobot-dlss-intNN and are published as pre-releases, built for Astro Bot with DLSS frame generation. According to its author, recent builds add a speed fix for Astro's Playroom and resolution scaling options in the launcher, so fixed-resolution patches are no longer needed.",
+      "games": [
+        "Astro Bot",
+        "Astro's Playroom"
+      ],
+      "tags": [
+        "frame generation",
+        "pre-release",
+        "Astro Bot"
+      ],
+      "notes": "DLSS frame generation normally needs an NVIDIA RTX graphics card. Frame generation raises the displayed frame rate; it does not make the game itself run faster.",
+      "license": "GPL-2.0"
+    },
+    {
+      "id": "cozma-ufc5",
+      "name": "Cozmaaa · UFC 5",
+      "repo": "Cozmaaa/KytyPS5",
+      "author": "Cozmaaa",
+      "description": "Build focused on UFC 5 (release files are named cozma-ufc5). Community members describe it as reaching a locked 60 fps in that game. Small download of about 24 MB; new builds appear every few days.",
+      "games": [
+        "UFC 5"
+      ],
+      "tags": [
+        "UFC 5",
+        "performance"
+      ],
+      "notes": "The 60 fps claim comes from chat messages and was not verified here.",
+      "license": "GPL-2.0"
+    },
+    {
+      "id": "gta",
+      "name": "TheCruZ · GTA",
+      "repo": "TheCruZ/KytyPS5-GTA",
+      "author": "TheCruZ",
+      "description": "KytyPS5 fork focused on making GTA work smoothly and on finding bugs to push back to the main repository. Numbered releases (v11, v12, v13) for Windows, Linux and macOS.",
+      "games": [
+        "Grand Theft Auto"
+      ],
+      "tags": [
+        "GTA",
+        "bug fixing"
+      ],
+      "license": "GPL-2.0"
+    },
+    {
+      "id": "frank",
+      "name": "mn3ema · Frank (Marvel's Wolverine)",
+      "repo": "mn3ema/KytyPS5-Frank",
+      "author": "mn3ema",
+      "description": "Experimental build tuned for Marvel's Wolverine. The author promises no support. Three small releases (v0.1 to v0.3).",
+      "games": [
+        "Marvel's Wolverine"
+      ],
+      "tags": [
+        "experimental",
+        "Wolverine"
+      ],
+      "license": "GPL-2.0"
+    },
+    {
+      "id": "nhl",
+      "name": "pengui07 · NHL",
+      "repo": "pengui07/KytyPS5-nhl",
+      "author": "pengui07",
+      "description": "Fork on a branch called cold. The repository description is the generic KytyPS5 text; the name points to NHL. A single release (about 62 MB) is published.",
+      "games": [
+        "NHL"
+      ],
+      "tags": [
+        "NHL"
+      ],
+      "notes": "Purpose inferred from the repository name.",
+      "license": "GPL-2.0"
+    },
+    {
+      "id": "kytyplus",
+      "name": "Coder787 · KytyPlus",
+      "repo": "Coder787-source/KytyPlus",
+      "author": "Coder787-source",
+      "description": "KytyPS5-based emulator with extra compatibility and HLE work. The author calls the changes experimental crash and boot-reach improvements, not a playability claim. Larger download (about 58 MB) with frequent versions (v4.8 to v5.0 within two days).",
+      "games": [],
+      "tags": [
+        "compatibility",
+        "experimental"
+      ],
+      "license": "GPL-2.0"
+    },
+    {
+      "id": "senaxx",
+      "name": "Senaxx · Upstream builds",
+      "repo": "Senaxx/KytyPS5",
+      "author": "Senaxx",
+      "description": "Builds named after upstream commits (for example KytyPS5-2026-10-24-9d8944c). Useful when you want a recent build of the original code published by someone else.",
+      "games": [],
+      "tags": [
+        "upstream"
+      ],
+      "license": "GPL-2.0"
+    },
+    {
+      "id": "bryan",
+      "name": "BryanKAdams · BryKytyPS5",
+      "repo": "BryanKAdams/BryKytyPS5",
+      "author": "BryanKAdams",
+      "description": "Bryan's emulator based on KytyPS5 and Kyty. The latest release is from 2026-10-04, so it has not followed recent changes.",
+      "games": [],
+      "tags": [
+        "older"
+      ],
+      "license": "GPL-2.0"
+    },
+    {
+      "id": "demonsouls-milly",
+      "name": "MILLYONYT · Demon's Souls",
+      "repo": "MILLYONYT/Demon-Souls-KytyPS5",
+      "author": "MILLYONYT",
+      "description": "Demon's Souls fork with numbered builds (version2 to version4). The last build is from 2026-10-04.",
+      "games": [
+        "Demon's Souls"
+      ],
+      "tags": [
+        "Demon's Souls",
+        "older"
+      ],
+      "notes": "The release zips are not named like the usual Windows builds; Studio looks inside for kyty_emulator.exe and reports an error if it is missing.",
+      "license": "GPL-2.0"
+    },
+    {
+      "id": "ghost-amd",
+      "name": "Mahir2861 · Ghost of Yotei (AMD test)",
+      "repo": "Mahir2861/KytyPS5-Ghost-AMD-test",
+      "author": "Mahir2861",
+      "description": "Test build of Ghost of Yotei for AMD graphics (RX 9060 XT). Work in progress, about 5 fps according to the author. A single test release from 2026-10-12.",
+      "games": [
+        "Ghost of Yotei"
+      ],
+      "tags": [
+        "AMD",
+        "work in progress"
+      ],
+      "license": "GPL-2.0"
+    }
+  ],
+  "patches": [
+    {
+      "id": "astrobot-jahirex",
+      "titleId": "PPSA21564",
+      "game": "Astro Bot",
+      "gameVersion": "01.007.000",
+      "name": "Astro Bot · non-RT, FPS unlock, fixed resolution, physics fixes",
+      "author": "Jahirex",
+      "version": "2026-10-17",
+      "file": "patches/PPSA21564-astrobot-jahirex.json",
+      "sha256": "b9373bd3ef25615a31a55ee473245893dfa181aa3910d7ec45141dd69974f91e",
+      "options": 26,
+      "description": "26 switchable options in one file: a non-RT renderer path, gameplay timers decoupled from render FPS (smoothed delta time, optional exact 60/90/120/144 fps cap), fixed render resolution (1080p to 4K), 30 fps physics fixes (rope bridges, cloth and inflatables, jack-in-the-box pads), two Havok crash fixes, lower model detail and lower texture memory, real-speed videos and a skip-intro option. R1+X toggles the timing patches at runtime. The author marks it experimental and untested ('sin probar'); it was ported from game version 1.018 to 1.007. Source: patch-list thread."
+    },
+    {
+      "id": "playroom-jahirex",
+      "titleId": "PPSA01325",
+      "game": "Astro's Playroom",
+      "gameVersion": "01.905.000",
+      "name": "Astro's Playroom · delta time, no-RT GI, frame caps, resolution, 30 fps physics",
+      "author": "Jahirex",
+      "version": "2026-10-26",
+      "file": "patches/PPSA01325-playroom-jahirex.json",
+      "sha256": "c9a423530449780b05813f54459d79fe2af2c4617b49cb7c9a5a0cd94ad689c2",
+      "options": 17,
+      "description": "17 options: gameplay timers decoupled from render FPS with exact frame caps (30 to 144 fps), R1+X runtime toggle, ray-traced GI removed, fixed render resolution (1080p to 4K) and 30 fps physics fixes (slingshot band, rope bridges). The author describes the 26/10 update as fixing input delay, frame pacing and a collision. Marked experimental. Source: patch-list thread."
+    },
+    {
+      "id": "playroom-lowend-teogorghin",
+      "titleId": "PPSA01325",
+      "game": "Astro's Playroom",
+      "gameVersion": "01.905.000",
+      "name": "Astro's Playroom · low-resolution options for weak GPUs",
+      "author": "teogorghin",
+      "version": "2026-10-25",
+      "file": "patches/PPSA01325-playroom-lowend-teogorghin.json",
+      "sha256": "714a5be6137b073a29ee1fa29cc4da2fb41a8788d0e365b0b382aea71aa66d80",
+      "options": 8,
+      "description": "A modified resolution patch with two extra low settings (720p and 540p), made for an AMD integrated-GPU laptop. 8 options: disable GI probes and lighting shaders, and fixed resolutions from 540p to 4K (720p and GI off by default). Source: patch-list thread."
+    },
+    {
+      "id": "sons-of-sparta-1080p",
+      "titleId": "PPSA28997",
+      "game": "God of War: Sons of Sparta",
+      "gameVersion": "01.008.001",
+      "name": "God of War Sons of Sparta · 1080p instead of 4K",
+      "author": "cosmo",
+      "version": "2026-10-13",
+      "file": "patches/PPSA28997-sons-of-sparta-cosmo.json",
+      "sha256": "685452d3488922971d3e6e57902a08248e5ab5fbd5d20c2da10c1c3b8dbe97e3",
+      "options": 1,
+      "description": "Render scale 0.5, so the game renders at 1080p instead of 4K. A single option, on by default. Source: patch-list thread."
+    }
+  ]
+}

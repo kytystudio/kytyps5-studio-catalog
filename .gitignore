@@ -1,0 +1,3 @@
+# patch files are only published with their author's permission: add one deliberately with `git add -f`
+patches/*.json
+patches/*.zip
